@@ -5,15 +5,7 @@ const TodoList = () => {
   const [lists, setLists] = useState([]);
 
   const handleTextDecor = (id) => {
-    fetch(`http://localhost:5000/list/${id}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(quantityy),
-    })
-      .then((res) => res.json())
-      .then((data) => console.log(data));
+    alert("i dont know how to add line through");
   };
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
@@ -70,30 +62,25 @@ const TodoList = () => {
         <thead>
           <tr>
             <th scope="col">Name</th>
-            <th scope="col" className="my">
-              Description
-            </th>
+            <th scope="col">Description</th>
           </tr>
         </thead>
         <tbody>
           {lists.map((list) => (
             <tr key={list._id}>
               <td>{list.name}</td>
-              <td id="my">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam,
-                aperiam.
-              </td>
+              <td id="my">{list.about}</td>
               <td>
                 <button
-                  onClick={() => handleTextDecor(_id)}
-                  className="btn btn-success"
+                  onClick={() => handleTextDecor()}
+                  className=" border-0 bg-success rounded text-white fw-bold px-3 me-4"
                 >
                   Complete
                 </button>
 
                 <button
                   onClick={() => deleteItem(list._id)}
-                  className=" border-0 bg-primary rounded text-white fw-bold px-3 "
+                  className=" border-0 bg-danger rounded text-white fw-bold px-3 "
                 >
                   Delete
                 </button>

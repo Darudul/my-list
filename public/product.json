@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Walk",
+    "about": "Every day morning 7-8 o'clock go for walk.\r\n"
+  },
+  {
+    "name": "Food",
+    "about": "8.30am take breakfast.\r\n"
+  },
+  {
+    "name": "Study",
+    "about": "Every day study start at 9 O'clock.\r\n"
+  },
+  {
+    "name": "Lunch",
+    "about": "2.30pm take breakfast.\r\n"
+  },
+  {
+    "name": "Dinner",
+    "about": "Having dinner at 9 pm.\r\n"
+  }
+]
