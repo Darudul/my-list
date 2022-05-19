@@ -3,7 +3,18 @@ import { useForm } from "react-hook-form";
 import "./TodoList.css";
 const TodoList = () => {
   const [lists, setLists] = useState([]);
-  const myFunction = (id) => {};
+
+  const handleTextDecor = (id) => {
+    fetch(`http://localhost:5000/list/${id}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(quantityy),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
+  };
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
     console.log(data);
@@ -67,15 +78,15 @@ const TodoList = () => {
         <tbody>
           {lists.map((list) => (
             <tr key={list._id}>
-              <td >{list.name}</td>
+              <td>{list.name}</td>
               <td id="my">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam,
                 aperiam.
               </td>
               <td>
                 <button
-                  onClick={() => myFunction(list._id)}
-                  className=" border-0 bg-primary rounded text-white fw-bold px-3 me-4"
+                  onClick={() => handleTextDecor(_id)}
+                  className="btn btn-success"
                 >
                   Complete
                 </button>
